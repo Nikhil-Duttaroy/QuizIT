@@ -305,9 +305,7 @@ nav {
   filter: blur(2px);
   -webkit-filter: blur(2px);
 }
-*:focus {
-  outline: none;
-}
+
 .contact {
   background-color: var(--secondaryColor);
   border-radius: 10px;
