@@ -98,6 +98,18 @@ R.addEventListener('mouseover',() => {
 })
 
 
+//login and signup
+const sign_in_btn = document.querySelector("#sign-in-btn");
+const sign_up_btn = document.querySelector("#sign-up-btn");
+const container = document.querySelector(".container");
+
+sign_up_btn.addEventListener("click", () => {
+  container.classList.add("sign-up-mode");
+});
+
+sign_in_btn.addEventListener("click", () => {
+  container.classList.remove("sign-up-mode");
+});
 
 
 
@@ -112,33 +124,6 @@ R.addEventListener('mouseover',() => {
 
 
 
-
-// S.addEventListener('mouseover',() => {
-//   Sahil.style.display="block"
-//   animate.play();
-// })
-// S.addEventListener('mouseout',() => {
-//   Sahil.style.display="none"
-//   animate.restart();
-// })
-
-// Rk.addEventListener('mouseover',() => {
-//   Rohitkumar.style.display="block"
-//   animate.play();
-// })
-// Rk.addEventListener('mouseout',() => {
-//   Rohitkumar.style.display="none"
-//   animate.restart();
-// })
-
-// R.addEventListener('mouseover',() => {
-//   Rutuja.style.display="block"
-//   animate.play();
-// })
-// R.addEventListener('mouseout',() => {
-//   Rutuja.style.display="none"
-//   animate.restart();
-// })
 
 
 
