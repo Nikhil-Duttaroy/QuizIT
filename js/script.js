@@ -48,9 +48,11 @@ const Rohitkumar=document.querySelector('#card3');
 const Rutuja=document.querySelector('#card4');
 const animate=gsap.from(".cards",{
   opacity:0,
-  height:0,
-  width:0,
-  duration:1
+  // height:0,
+  // width:0,
+  yPercent:50,
+  duration:1,
+  ease:"sine",
 })
 
 N.addEventListener('mouseover',() => { 
