@@ -15,7 +15,7 @@
       <nav>
         <ul class="navbar">
           <li class="navItems">
-            <a href="index.html"
+            <a href="index.php"
               ><img src="images/QuizIT logodarklogo.svg" alt="Logo" class="navLogo" width="45px"
             /></a>
           </li>

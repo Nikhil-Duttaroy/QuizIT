@@ -25,8 +25,8 @@
               style="padding: 2px;"
           /></a>
         </li>
-        <li class="navItems"><a href="login.html">Login/Signup</a></li>
-        <li class="navItems"><a href="contact.html" class="contactUs">Contact Us</a></li>
+        <li class="navItems"><a href="login.php">Login/Signup</a></li>
+        <li class="navItems"><a href="contact.php" class="contactUs">Contact Us</a></li>
       </ul>
     </nav>
     <section class="one">
