@@ -26,7 +26,7 @@
           /></a>
         </li>
         <li class="navItems"><a href="login.html">Login/Signup</a></li>
-        <li class="navItems"><a href="#" class="contactUs">Contact Us</a></li>
+        <li class="navItems"><a href="contact.html" class="contactUs">Contact Us</a></li>
       </ul>
     </nav>
     <section class="one">
@@ -177,38 +177,7 @@
       </div>
     </section>
 
-    <div class="modal">
-      <form
-        id="contact-form"
-        action="POST"
-        name="ContactForm"
-        data-netlify="true"
-        data-netlify-recaptcha="true"
-        netlify-honeypot="bot-field"
-      >
-        <i class="fas fa-times fa-1x close"></i>
-        <h2 style="text-align: center">Get in Touch</h2>
-
-        <label>Name</label>
-        <input required class="input-field" type="text" name="name" />
-
-        <label>Subject</label>
-        <input required class="input-field" type="text" name="subject" />
-
-        <label>Email</label>
-        <input required class="input-field" type="text" name="email" />
-
-        <label>Message</label>
-        <textarea required class="input-field" name="message"></textarea>
-        <p class="hidden" style="visibility: hidden; height: 0">
-          <label
-            >Don’t fill this out if you're human: <input name="bot-field"
-          /></label>
-        </p>
-        <div data-netlify-recaptcha="true"></div>
-        <input id="submit-btn" type="submit" value="Send" />
-      </form>
-    </div>
+   
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
       integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="

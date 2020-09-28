@@ -1,39 +1,39 @@
-const contact=document.querySelector(".contactUs");
-const close=document.querySelector(".close");
-const modal = document.querySelector(".modal");
-const contain = document.querySelectorAll(".mainContainer");
+// const contact=document.querySelector(".contactUs");
+// const close=document.querySelector(".close");
+// const modal = document.querySelector(".modal");
+// const contain = document.querySelectorAll(".mainContainer");
 
-contact.addEventListener('click',() =>
-    blurStyle()
-)
-
-
+// contact.addEventListener('click',() =>
+//     blurStyle()
+// )
 
 
-close.addEventListener("click",()=>{
-    modal.style.display = "none";
+
+
+// close.addEventListener("click",()=>{
+//     modal.style.display = "none";
     
-    contain.forEach((contain)=>{
-      contain.classList.remove("isBlur"); 
-    })
+//     contain.forEach((contain)=>{
+//       contain.classList.remove("isBlur"); 
+//     })
     
-  })
+//   })
 
-function blurStyle() {
-    modal.style.display = "block";
-    contain.forEach((contain) => {
-      console.log(contain);
-      contain.classList.add("isBlur");
-    });
-    gsap.from(".modal", {
-      opacity: 0,
-      yPercent: -100,
-      // xPercent: 100,
-      // rotate: 256,
-      duration: 2,
-      ease: "back(3)",
-    });
-  }
+// function blurStyle() {
+//     modal.style.display = "block";
+//     contain.forEach((contain) => {
+//       console.log(contain);
+//       contain.classList.add("isBlur");
+//     });
+//     gsap.from(".modal", {
+//       opacity: 0,
+//       yPercent: -100,
+//       // xPercent: 100,
+//       // rotate: 256,
+//       duration: 2,
+//       ease: "back(3)",
+//     });
+//   }
 
 
 
