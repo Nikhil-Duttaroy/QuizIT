@@ -9,7 +9,7 @@
 <nav>
       <ul class="navbar">
         <li class="navItems">
-          <a href="#"
+          <a href="index.php"
             ><img
               src="images/QuizIT logodarklogo.svg"
               alt="Logo"

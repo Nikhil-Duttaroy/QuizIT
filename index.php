@@ -37,7 +37,7 @@
           </p>
         </div>
         <div class="bottomColumn">
-          <a class="aStarted" href="">Let's Get started</a>
+          <a class="aStarted" href="login.php">Let's Get started</a>
         </div>
       </div>
     </section>
