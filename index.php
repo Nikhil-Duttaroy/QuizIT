@@ -17,9 +17,16 @@
   <?php include 'nav.php' ?>
     <section class="one">
       <div
-        class="mainContainer"
+        class="mainContainer parallax"
         style="border-bottom: 1px solid var(--secondaryColor)"
       >
+      <style>.parallax {
+  background-image: url("https://images.unsplash.com/photo-1536613105185-09ea1249a2cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=765&q=80");  
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}</style>
         <header class="topColumn"></header>
         <div class="leftColumn">
           <img

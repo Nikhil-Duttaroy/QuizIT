@@ -1,0 +1,64 @@
+.formContain {
+  
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: translate(-50%,-50%);
+    margin-top:20px
+  }
+  
+  @media screen and (max-width: 600px) {
+    .formContain {
+      display: block;
+    }
+  }
+  #adminlogin-form {
+    display: block;
+    max-width: 600px;
+    margin: 2% auto;
+    border: 1px solid var(--secondaryColor);
+    padding: 15px;
+    border-radius: 5px;
+    background-color: var(--primaryColor);
+    margin-bottom: 50px;
+  }
+  
+  #adminlogin-form label {
+    line-height: 2.7em;
+  }
+  
+  #adminlogin-form textarea {
+    min-height: 100px;
+    font-size: 14px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--secondaryColor);
+    font-size: 14px;
+  }
+  
+  .close {
+    cursor: pointer;
+  }
+  #submit-btn {
+    display: block;
+    margin: 10px auto;
+    width: 30%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--secondaryColor);
+    /* color:var(--fontColor); */
+    /* background-color: var(--buttonColor); */
+    border: none;
+    cursor: pointer;
+  }
+  
+  #submit-btn:hover {
+    border: 2px solid var(--secondaryColor);
+  }

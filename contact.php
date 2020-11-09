@@ -47,10 +47,16 @@
         </form>
       </div>  
       <div class="mapContain">
-      <div id="mapid">
-        
+        <div id="mapid">        
+        </div>
+        <div class="videocontain">
+          <video width="320" height="240" controls>
+            <source src="images/videoplayback.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
-      </div>
+      
   </div>     
 </body>
 <script src="js/contactmap.js"></script>
