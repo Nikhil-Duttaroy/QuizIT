@@ -43,7 +43,7 @@ function getUser() {
 
 
 <div>
-<h3>Enter user email id </h3>
+<h3>Enter User Name </h3>
 
 <input type="text" name="usrEmailID" id ="usrEmailID" >
 <br/><br/>
