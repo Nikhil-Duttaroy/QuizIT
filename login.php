@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,7 +33,7 @@
 <?php
   require ("connect.php");
   $success=null; 
-  $error=null;
+  $login_error=null;
 
   $email=(isset($_POST['email']) ? $_POST['email'] : null );
   $password=(isset($_POST['password']) ? $_POST['password'] : null );
@@ -56,9 +57,9 @@
                   header("location: home.php");
               }       
           }
-          else $error = "Your Login Name or Password is invalid";                          
+          else $login_error = "Your Login Name or Password is invalid";                          
       }
-      else  $error="Input Values";
+      else  $login_error="Input Values";
   }    
           // mysqli_close($conn);    
 ?>
@@ -74,7 +75,7 @@
               <i class="fas fa-lock"></i>
               <input type="password" placeholder="Password" name="password"/>
             </div>
-            <p style="color: red;"><?php echo $error;?></p>
+            <p style="color: red;"><?php echo $login_error;?></p>
             <input type="submit" value="Login" class="btn solid" name="submit" />
             <p class="social-text">Log in as Admin</p>
             <div class="social-media">
@@ -85,7 +86,57 @@
           </form>
 
           <!-- Sign Up Form -->
-          <form action="register.php" class="sign-up-form" id="signup" onsubmit="return validateForm();" method="POST">
+
+<?php
+require ("connect.php");
+$success=null; 
+$error=null;
+$name=(isset($_POST['username']) ? $_POST['username'] : null );
+$email=(isset($_POST['email']) ? $_POST['email'] : null );
+$password1=(isset($_POST['password1']) ? $_POST['password1'] : null );
+$password2=(isset($_POST['password2']) ? $_POST['password2'] : null );
+if(isset($_POST['Rsubmit'])){
+ 
+    if(!empty($name && $password && $email && $password1)){
+        $compare = "SELECT * FROM user";//where email='$email'
+        $result = mysqli_query($conn, $compare);
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+                $stored_email=$row["email"];
+                if($stored_email === $email){
+                    die ("User already exists");
+                    // mysqli_close($conn);
+                }               
+                }                          
+            }
+            if (filter_var($email, FILTER_VALIDATE_EMAIL)) { 
+                if($password1 === $password2){
+                    $password1=md5($password1);
+                    $sql="INSERT into user (name,password,email) VALUES('$name','$password1','$email');";
+                    if (mysqli_query($conn, $sql)) {
+                        echo "<script type='text/javascript'>alert('New user Added');
+                                window.location='login.php';
+                                </script>";
+                                //header("Location: login.php");
+                      } 
+                    else {
+                        echo "Error: " . $sql . ":-" . mysqli_error($conn);
+                    }
+                    mysqli_close($conn);
+                    
+                }
+                else $error="Passwords Don't match";
+            }
+            else $error="Please enter a valid email";           
+        }
+        else  $error="Input Values";
+        // mysqli_close($conn);    
+    }
+?>
+
+          <form action="" class="sign-up-form" id="signup"  method="POST" onsubmit="return validateForm();">
+          
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
@@ -97,20 +148,14 @@
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" name="password"/>
+              <input type="password" placeholder="Password" name="password1"/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Confirm Password" name="password1"/>
+              <input type="password" placeholder="Confirm Password" name="password2"/>
             </div>
             <p style="color: red;"><?php echo $error;?></p>
-            <input type="submit" class="btn" value="Sign up" name="submit"/>
-            <!-- <p class="social-text" >Or Sign up with</p>
-            <div class="social-media">           
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-            </div> -->
+            <input type="submit" class="btn" value="Sign up" name="Rsubmit"/>
           </form>
         </div>
       </div>

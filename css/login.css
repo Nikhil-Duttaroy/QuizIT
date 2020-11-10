@@ -3,9 +3,7 @@
   --primaryColor: #1f2833;
   --secondaryColor: #66fcf1;
 }
-p{
-  color:var(--secondaryColor);
-}
+
 * {
   margin: 0;
   padding: 0;
