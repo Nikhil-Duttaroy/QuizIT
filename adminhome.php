@@ -8,6 +8,6 @@
 <body>
 <?php include 'nav.php' ?>
 <h1 style="text-align: center; margin:20px">Admin</h1>
-<a href="ajax.html">Ajax</a>
+<a href="ajax.php">Ajax</a>
 </body>
 </html>
