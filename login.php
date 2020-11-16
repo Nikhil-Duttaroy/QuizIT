@@ -52,6 +52,9 @@
                   $name=$row['name'];      
                   $mail=$row['email'];        
                   session_start();
+                  $id = $row['id'];
+                  $_SESSION['id'] = $id;
+                  $_SESSION['email'] = $row['email'];
                   $_SESSION['user'] = $name;
                   $_SESSION['mail'] = $mail;
                   header("location: home.php");
@@ -136,7 +139,6 @@ if(isset($_POST['Rsubmit'])){
 ?>
 
           <form action="" class="sign-up-form" id="signup"  method="POST" onsubmit="return validateForm();">
-          
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
@@ -156,6 +158,7 @@ if(isset($_POST['Rsubmit'])){
             </div>
             <p style="color: red;"><?php echo $error;?></p>
             <input type="submit" class="btn" value="Sign up" name="Rsubmit"/>
+            
           </form>
         </div>
       </div>
