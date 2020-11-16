@@ -1,8 +1,43 @@
 <html>
 <head>
-  
+  <link rel="stylesheet" href="css/index.css">  
   <meta charset="UTF-8">
- 
+<style>
+  .ajaxholder{
+    width: 100%;
+    height:50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn {
+  width: 150px;
+  background-color: #4d84e2;
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: 49px;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background-color:  var(--secondaryColor);
+}
+input[type=text]{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--secondaryColor);
+  font-size: 14px;
+}
+
+</style>
 <script>
 function getUser() {
   usrEmailID = document.getElementById("usrEmailID").value;
@@ -40,21 +75,18 @@ function getUser() {
 </script>
 </head>
 <body>
-
-
-<div>
-<h3>Enter User Name </h3>
-
-<input type="text" name="usrEmailID" id ="usrEmailID" >
-<br/><br/>
-<input type="button" onclick="getUser()" value="Click Me"/>
-
-
+<?php include("nav.php"); ?>
+<div class="ajaxholder">
+  <div class="container">
+    <h3>Enter User Name </h3>
+    <input type="text" name="usrEmailID" id ="usrEmailID" >
+    <br/><br/>
+    <button class= "btn" onclick="getUser()" > Get User </button>
+  </div>
+  <div>
+    <p id="userDetail"></p> 
+  <div>
 </div>
-
-<div>
-<p id="userDetail"></p> 
-<div>
 
 
 </body>

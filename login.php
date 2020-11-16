@@ -34,18 +34,13 @@
   require ("connect.php");
   $success=null; 
   $login_error=null;
-
   $email=(isset($_POST['email']) ? $_POST['email'] : null );
   $password=(isset($_POST['password']) ? $_POST['password'] : null );
   if(isset($_POST['submit'])){
-  
       if(!empty($email && $password)){
-          $password=md5($password);
-
-          
+          $password=md5($password); 
           $select = "SELECT * FROM user where email='$email' and password='$password'"; 
           $result = mysqli_query($conn, $select);
-        
           if (mysqli_num_rows($result) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($result)) {
@@ -63,8 +58,7 @@
           else $login_error = "Your Login Name or Password is invalid";                          
       }
       else  $login_error="Input Values";
-  }    
-          // mysqli_close($conn);    
+  }             // mysqli_close($conn);    
 ?>
 
         <!-- Sign In Form -->
