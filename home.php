@@ -7,10 +7,12 @@
 		exit;
 	}
     $mail=$_SESSION['mail'];
-    $name=$_SESSION['user'];
+    $name=$_SESSION['user'];  
+    if (isset($_SESSION['id'])) {
+    $query = "SELECT * FROM questions";
+    $run = mysqli_query($conn , $query) or die(mysqli_error($conn));
+    $total = mysqli_num_rows($run);
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,15 +62,15 @@ button:hover {
 }
 
     
-    </style>
+</style>
 </head>
 <body>
 <?php include 'nav.php' ?>
-<h1 style="text-align:center; margin:15px">Begin Your Quizzing journey</h1>
+<h1 style="text-align:center; margin:15px"><?php echo $_SESSION['user'];?> <br> Begin Your Quizzing journey</h1>
 <div class="topicContainer">
 <div class="topicNames php">
     <h2 class="head">PHP</h2>
-    <a href=""><button>Take Quiz</button></a>
+    <a href="phpquestions.php?n=1"><button>Take Quiz</button></a>
 </div>
 <div class="topicNames html">
     <h2 class="head">HTML</h2>
@@ -84,3 +86,9 @@ button:hover {
 <a style="position:absolute; top:3em ;right:1em;" href="logout.php">Logout</a>
 </body>
 </html>
+<?php unset($_SESSION['score']); ?>
+<?php }
+else {
+	header("location: index.php");
+}
+?>
