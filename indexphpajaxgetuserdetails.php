@@ -10,7 +10,7 @@ $emailid=$obj->usrEmail;
 //$emailid = "ralop@ertocp.com";
 $output = array();
 
-$sql = "SELECT * from user where name ='$emailid'";
+$sql = "SELECT * from user where email ='$emailid'";
 //echo $sql;
 $result = mysqli_query($conn, $sql);
  while($row = mysqli_fetch_assoc($result)) {

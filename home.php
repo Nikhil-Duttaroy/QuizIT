@@ -9,7 +9,7 @@
     $mail=$_SESSION['mail'];
     $name=$_SESSION['user'];  
     if (isset($_SESSION['id'])) {
-    $query = "SELECT * FROM questions";
+    $query = "SELECT * FROM phpquestions";
     $run = mysqli_query($conn , $query) or die(mysqli_error($conn));
     $total = mysqli_num_rows($run);
 ?>
@@ -74,11 +74,11 @@ button:hover {
 </div>
 <div class="topicNames html">
     <h2 class="head">HTML</h2>
-    <a href=""><button>Take Quiz</button></a>
+    <a href="htmlquestions.php"><button>Take Quiz</button></a>
 </div>
 <div class="topicNames js">
     <h2 class="head">Javascript</h2>
-    <a href=""><button>Take Quiz</button></a>
+    <a href="jsquestions.php"><button>Take Quiz</button></a>
 </div>
 
 

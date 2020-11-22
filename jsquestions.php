@@ -10,10 +10,10 @@ if (isset($_SESSION['id'])) {
 	        }
 	        }
 	        else {
-	        	header('location: phpquestions.php?n='.$_SESSION['quiz']);
+	        	header('location: jsquestions.php?n='.$_SESSION['quiz']);
 	        } 
 	        if (isset($_SESSION['quiz']) && $_SESSION['quiz'] == $qno) {
-				$query = "SELECT * FROM phpquestions WHERE qno = '$qno'" ;
+				$query = "SELECT * FROM jsquestions WHERE qno = '$qno'" ;
 				$run = mysqli_query($conn , $query) or die(mysqli_error($conn));
 				if (mysqli_num_rows($run) > 0) {
 					$row = mysqli_fetch_array($run);
@@ -25,7 +25,7 @@ if (isset($_SESSION['id'])) {
 					$ans4 = $row['ans4'];
 					$correct_answer = $row['correct_answer'];
 					$_SESSION['quiz'] = $qno;
-					$checkqsn = "SELECT * FROM phpquestions" ;
+					$checkqsn = "SELECT * FROM jsquestions" ;
 					$runcheck = mysqli_query($conn , $checkqsn) or die(mysqli_error($conn));
 					$countqsn = mysqli_num_rows($runcheck);
 					$time = time();
@@ -36,7 +36,7 @@ if (isset($_SESSION['id'])) {
 
 				}
 				else {
-					echo "<script> alert('something went wrong');
+					echo "<script> alert(' went wrong');
 				window.location.href = 'home.php'; </script> " ;
 				}
 			}
@@ -46,14 +46,14 @@ if (isset($_SESSION['id'])) {
 			}
 ?>
 <?php 
-$total = "SELECT * FROM phpquestions ";
+$total = "SELECT * FROM jsquestions ";
 $run = mysqli_query($conn , $total) or die(mysqli_error($conn));
 $totalqn = mysqli_num_rows($run);
 ?>
 
 <html>
 	<head>
-		<title>PHP-Quiz</title>
+		<title>JavaScript-Quiz</title>
 		<link rel="stylesheet" type="text/css" href="css/ques.css">
 		
 	</head>
@@ -61,7 +61,7 @@ $totalqn = mysqli_num_rows($run);
 	<body>
 		<header>
 			<?php include("nav.php") ?>
-				<h1 style="text-align:center;">PHP-Quiz</h1>
+				<h1 style="text-align:center;">Javascript-Quiz</h1>
 		</header>
 
 		
@@ -69,7 +69,7 @@ $totalqn = mysqli_num_rows($run);
 				<div class= "current">Question <?php echo $qno; ?> of <?php echo $totalqn; ?></div>
 				<div class="question"><p class="question"><?php echo $question; ?></p></div>
 				<div class="form">
-				<form method="post" action="phpprocess.php">
+				<form method="post" action="jsprocess.php">
 					<ul class="choices">
 					   <li><input name="choice" type="radio" value="a" required=""><?php echo $ans1; ?></li>
 					   <li><input name="choice" type="radio" value="b" required=""><?php echo $ans2; ?></li>

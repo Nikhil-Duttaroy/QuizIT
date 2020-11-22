@@ -36,6 +36,9 @@ input[type=text]{
   border: 1px solid var(--secondaryColor);
   font-size: 14px;
 }
+td{
+  text-align: center;
+}
 
 </style>
 <script>
@@ -48,7 +51,10 @@ function getUser() {
   console.log(usrEmailID);
   var userJSON = JSON.stringify(obj);
 
-  var txt ="";
+  var id ="";
+  var name ="";
+  var email ="";
+  var score ="";
   var xmlhttp=new XMLHttpRequest();
   xmlhttp.onreadystatechange=function() {
     if (this.readyState==4 && this.status==200) {
@@ -60,11 +66,17 @@ function getUser() {
         }
         else{
         for (x in myObj) { 
-            txt += "User name is: "+ myObj[x].name + " and user id is: " +myObj[x].id +" and user email is: "+ myObj[x].email + "<br>"; 
+            id=myObj[x].id;                
+            name=myObj[x].name;
+            email=myObj[x].email;
+            score=myObj[x].score ;
         } 
         }
-       document.getElementById("userDetail").innerHTML = txt; 
-      
+       document.getElementById("txt").innerHTML= txt;
+       document.getElementById("id").innerHTML = id;
+       document.getElementById("name").innerHTML =name;
+       document.getElementById("email").innerHTML = email;
+       document.getElementById("score").innerHTML = score; 
     }
   }
   xmlhttp.open("POST","indexphpajaxgetuserdetails.php",true);
@@ -78,16 +90,29 @@ function getUser() {
 <?php include("nav.php"); ?>
 <div class="ajaxholder">
   <div class="container">
-    <h3>Enter User Name </h3>
+    <h3>Enter User Email </h3>
     <input type="text" name="usrEmailID" id ="usrEmailID" >
     <br/><br/>
     <button class= "btn" onclick="getUser()" > Get User </button>
   </div>
-  <div>
-    <p id="userDetail"></p> 
+  <div style="width: 50%;">
+    <table border="1" 
+           cellpadding="15" id="userDetail" style="width:100%;" >
+      <tr>
+        <th>User Id</th>
+        <th>User Name </th>
+        <th>Email</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td id="id">-</td>
+        <td id="name">-</td>
+        <td id="email">-</td>
+        <td id="score">-</td>
+      </tr>
+    </table>
+    <h2 id="txt"></h2> 
   <div>
 </div>
-
-
 </body>
 </html>

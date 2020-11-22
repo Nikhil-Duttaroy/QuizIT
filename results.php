@@ -10,7 +10,7 @@ if (isset($_SESSION['id'])) {
 	?>	 
 <html>
 	<head>
-		<title>PHP-Quiz</title>
+		<title>Quiz</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" href="css/ques.css">
 	</head>

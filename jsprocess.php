@@ -20,7 +20,7 @@ if (isset($_SESSION['id'])) {
             $selected_choice = $_POST['choice'];
             $nextqno = $qno+1;
 
-            $query = "SELECT correct_answer FROM questions WHERE qno= '$qno' ";
+            $query = "SELECT correct_answer FROM jsquestions WHERE qno= '$qno' ";
             $run = mysqli_query($conn , $query) or die(mysqli_error($conn));
             if(mysqli_num_rows($run) > 0 ) {
                 $row = mysqli_fetch_array($run);
@@ -30,7 +30,7 @@ if (isset($_SESSION['id'])) {
                 $_SESSION['score']++;
             }
 
-        $query1 = "SELECT * FROM questions ";
+        $query1 = "SELECT * FROM jsquestions ";
         $run = mysqli_query($conn , $query1) or die(mysqli_error($conn));
         $totalqn = mysqli_num_rows($run);
 
@@ -38,7 +38,7 @@ if (isset($_SESSION['id'])) {
         	header("location: results.php");
         }
         else {
-        	header("location: phpquestions.php?n=".$nextqno);
+        	header("location: jsquestions.php?n=".$nextqno);
         }
 
     
