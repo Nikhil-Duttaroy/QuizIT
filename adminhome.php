@@ -59,20 +59,20 @@
 <div class="topicContainer">
     <div class="topicNames php">
         <h2 class="head">PHP</h2>
-        <a href=""><button>Add Questions</button></a>
-        <a href=""><button>All Questions</button></a>
+        <a href="addphp.php"><button>Add Questions</button></a>
+        <a href="allphp.php"><button>All Questions</button></a>
         <!-- <a href=""><button>Scoreboard</button></a> -->
     </div>
     <div class="topicNames html">
         <h2 class="head">HTML</h2>
-        <a href=""><button>Add Questions</button></a>
-        <a href=""><button>All Questions</button></a>
+        <a href="addhtml.php"><button>Add Questions</button></a>
+        <a href="allhtml.php"><button>All Questions</button></a>
         <!-- <a href=""><button>Scoreboard</button></a> -->
     </div>
     <div class="topicNames js">
         <h2 class="head">Javascript</h2>
-        <a href=""><button>Add Questions</button></a>
-        <a href=""><button>All Questions</button></a>
+        <a href="addjs.php"><button>Add Questions</button></a>
+        <a href="alljs.php"><button>All Questions</button></a>
         <!-- <a href=""><button>Scoreboard</button></a> -->
     </div>
 </div>
