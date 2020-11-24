@@ -96,9 +96,9 @@ function getUser() {
     <br/><br/>
     <button class= "btn" onclick="getUser()" > Get User </button>
   </div>
-  <div style="width: 50%;">
+  <div style="width: 100%;">
     <table border="1" 
-           cellpadding="15" id="userDetail" style="width:100%;" >
+           cellpadding="15" id="userDetail" style="width:50%;" >
       <tr>
         <th>User Id</th>
         <th>User Name </th>

@@ -44,12 +44,13 @@
           if (mysqli_num_rows($result) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($result)) {
-                  $name=$row['name'];      
-                  $mail=$row['email'];        
                   session_start();
+                  $name=$row['name'];      
+                  $mail=$row['email']; 
                   $id = $row['id'];
                   $_SESSION['id'] = $id;
                   $_SESSION['email'] = $row['email'];
+                  $_SESSION['score'] = $row['score'];
                   $_SESSION['user'] = $name;
                   $_SESSION['mail'] = $mail;
                   header("location: home.php");

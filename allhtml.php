@@ -108,6 +108,7 @@
 				<th>Option4</th>
 				<th>Correct Answer </th>
 				<th>Edit</th>
+				<th>Delete</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -133,7 +134,8 @@
                 echo "<td>$option3</td>";
                 echo "<td>$option4</td>";
                 echo "<td>$Answer</td>";
-                echo "<td> <a href='edithtml.php?qno=$qno'> Edit </a></td>";
+				echo "<td> <a href='edithtml.php?qno=$qno'> Edit </a></td>";
+				echo "<td> <a href='delhtml.php?qno=$qno'> Delete</a></td>";
               
                 echo "</tr>";
              }

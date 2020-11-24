@@ -32,8 +32,6 @@ if (isset($_SESSION['id'])) {
 					$_SESSION['start_time'] = $time;
 					$allowed_time = $countqsn * 0.05;
 					$_SESSION['time_up'] = $_SESSION['start_time'] + ($allowed_time * 60) ;
-					
-
 				}
 				else {
 					echo "<script> alert(' went wrong');

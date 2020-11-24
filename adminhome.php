@@ -56,6 +56,7 @@
 <h1 style="text-align:center; margin:15px">Admin panel</h1>
 <a href="ajax.php" style="position:absolute; top:3em ;"><button class="topbtn">Search Player</button></a>
 <a style="position:absolute; top:3em ;right:1em;" href="logout.php"><button class="topbtn">Logout</button></a>
+<div style="display: flex; justify-content:center"><a  href="allplayers.php"><button>All Players</button></a></div>
 <div class="topicContainer">
     <div class="topicNames php">
         <h2 class="head">PHP</h2>
