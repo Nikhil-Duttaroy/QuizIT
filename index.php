@@ -82,7 +82,7 @@
                 <a href="https://github.com/Nikhil-Duttaroy" target="_blank"
                   ><i class="fab fa-github fa-2x"></i
                 ></a>
-                <a href=""
+                <a href="https://www.linkedin.com/in/nikhil-duttaroy/"
                   ><i class="fab fa-linkedin-in fa-2x" target="_blank"></i
                 ></a>
               </div>
@@ -91,10 +91,10 @@
               <img src="images/sahil.jpg" alt="" class="profile" />
               <h2 class="name">Sahil Dhuri</h2>
               <div class="social">
-                <a href="" target="_blank"
+                <a href="https://github.com/sahildhuri" target="_blank"
                   ><i class="fab fa-github fa-2x"></i
                 ></a>
-                <a href="" target="_blank"
+                <a href="https://www.linkedin.com/in/sahil-dhuri-b15a5a194/" target="_blank"
                   ><i class="fab fa-linkedin-in fa-2x"></i
                 ></a>
               </div>
@@ -104,7 +104,7 @@
               <img src="images/rohit.jpg" alt="" class="profile" />
               <h2 class="name">Rohitkumar Sahu</h2>
               <div class="social">
-                <a href="" target="_blank"
+                <a href="https://github.com/Rohit-RGS" target="_blank"
                   ><i class="fab fa-github fa-2x"></i
                 ></a>
                 <a href="" target="_blank"
@@ -117,7 +117,7 @@
               <img src="images/rutuja.jpg" alt="" class="profile" />
               <h2 class="name">Rutuja Jadhav</h2>
               <div class="social">
-                <a href="" target="_blank"
+                <a href="https://github.com/rutuja221100" target="_blank"
                   ><i class="fab fa-github fa-2x"></i
                 ></a>
                 <a href="" target="_blank"
