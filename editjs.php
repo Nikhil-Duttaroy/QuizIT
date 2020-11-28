@@ -56,41 +56,45 @@ if(isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>PHP-Quiz</title>
+		<title>Quiz</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/add.css">
 	</head>
 
 	<body>
 		<header>
-		<? include "nav.php";?>
+		<?php include "nav.php";?>
 		</header>
-
-		<main>
-			<div class="container">
-				<h2>Add a question...</h2>
-				<form method="post" action="">
-
-					<p>
+		<div class="modal">
+			<h2 style="text-align: center; padding:15px">Add a PHP Question</h2>
+			<form id="contact-form" method="POST" name="ContactForm">
+					
+					
 						<label>Question</label>
-						<input type="text" name="question" required="" value="<?php echo $question; ?>">
-					</p>
-					<p>
+						<br>
+						<input type="text" class="input-field" name="question" required="" value="<?php echo $question; ?>">
+				
+					
 						<label>Choice #1</label>
-						<input type="text" name="choice1" required="" value="<?php echo $ans1; ?>">
-					</p>
-					<p>
+						<br>
+						<input type="text" class="input-field" name="choice1" required="" value="<?php echo $ans1; ?>">
+				
+					
 						<label>Choice #2</label>
-						<input type="text" name="choice2" required="" value="<?php echo $ans2; ?>">
-					</p>
-					<p>
+						<br>
+						<input type="text" class="input-field" name="choice2" required="" value="<?php echo $ans2; ?>">
+				
+					
 						<label>Choice #3</label>
-						<input type="text" name="choice3" required="" value="<?php echo $ans3; ?>">
-					</p>
-					<p>
+						<br>
+						<input type="text" class="input-field" name="choice3" required="" value="<?php echo $ans3; ?>">
+				
+					
 						<label>Choice #4</label>
-						<input type="text" name="choice4" required="" value="<?php echo $ans4; ?>">
-					</p>
-					<p>
+						<br>
+						<input type="text" class="input-field" name="choice4" required="" value="<?php echo $ans4; ?>">
+				
+					
 						<label>Correct answer</label>
 						<select name="answer" >
                         <option value="a">Choice #1 </option>
@@ -98,15 +102,16 @@ if(isset($_POST['submit'])) {
                         <option value="c">Choice #3</option>
                         <option value="d">Choice #4</option>
                     </select>
-					</p>
-					<p>
+				
+					
 						
-						<input type="submit" name="submit" value="Submit">
-					</p>
-				</form>
-			</div>
-		</main>
-
+						<input type="submit" id="btn" name="submit" value="Submit">
+				
+					
+		
+      		</form>
+	</div>
+		
 		
 
 	</body>

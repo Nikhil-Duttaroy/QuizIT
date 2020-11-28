@@ -1,0 +1,56 @@
+.modal{
+    height: 100vh;
+
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.input-field{
+	width: 30%;
+	padding-top: 10px;
+	padding-bottom:10px; 
+	border-radius: 5px;
+	border:1px solid var(--borderColor);
+	font-size: 16px;
+}
+label{
+    font-size: 1.5rem;
+}
+
+#submit-btn{
+	margin-top: 10px;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom:10px; 
+  color:var(--fontColor);
+	background-color: var(--buttonColor);
+  border:none;
+  cursor: pointer;
+}
+
+#submit-btn:hover{
+  border:2px solid var(--fontColor)
+}
+
+
+#btn {
+    width: 100px;
+    background-color: #4d84e2;
+    border: none;
+    outline: none;
+    height: 25px;
+    border-radius: 49px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  
+  #btn:hover {
+    background-color:  var(--secondaryColor);
+  }

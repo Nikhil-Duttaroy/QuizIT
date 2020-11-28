@@ -19,8 +19,12 @@
               style="padding: 2px;"
           /></a>
         </li>
-        <li class="navItems"><a href="login.php">Login/Signup</a></li>
-        <li class="navItems"><a href="contact.php" class="contactUs">Contact Us</a></li>
+        <?php 
+        if(!isset($_SESSION['id'])) { ?>
+          <li class="navItems"><a href="login.php">Login/Signup</a></li>
+          <li class="navItems"><a href="contact.php" class="contactUs">Contact Us</a></li>
+       <?php }  ?>
+        
       </ul>
     </nav>
 </body>

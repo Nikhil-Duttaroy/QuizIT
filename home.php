@@ -8,13 +8,23 @@
 	}
     $mail=$_SESSION['mail'];
     $name=$_SESSION['user']; 
-    $score=$_SESSION['score']; 
+    // $score=$_SESSION['score']; 
     if (isset($_SESSION['id'])) {
     $query = "SELECT * FROM phpquestions";
     $run = mysqli_query($conn , $query) or die(mysqli_error($conn));
     $total = mysqli_num_rows($run);
-?>
 
+    $query1 = "SELECT * FROM user where email='$mail'";
+    $select_players = mysqli_query($conn, $query1) or die(mysqli_error($conn));
+    if (mysqli_num_rows($select_players) > 0 ) {
+    while ($row = mysqli_fetch_array($select_players)) {
+        $id = $row['id'];
+        $email = $row['email'];
+        $score = $row['score'];
+    }
+}
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,7 +92,7 @@ button:hover {
 <body>
 <?php include 'nav.php' ?>
 <h1 style="text-align:center; margin:15px"><?php echo $_SESSION['user']; ?> <br> Begin Your Quizzing journey</h1>
-<h3>Previous Score : <?php echo $_SESSION['score']; ?></h3>
+<h3>Previous Score : <?php echo $score; ?></h3>
 
 <div class="topicContainer">
     <div class="topicNames php">

@@ -6,7 +6,6 @@
   $email=(isset($_POST['email']) ? $_POST['email'] : null );
   $password=(isset($_POST['password']) ? $_POST['password'] : null );
   if(isset($_POST['submit'])){
-      echo "Hello";
       if(!empty($name && $email && $password)){
           $password=md5($password);
           $select = "SELECT * FROM admin where name='$name' and email='$email' and password='$password'"; 
@@ -14,12 +13,10 @@
         
           if (mysqli_num_rows($result) > 0) {
               // output data of each row
-              while($row = mysqli_fetch_assoc($result)) {
-                  $name=$row['name'];      
-                  $mail=$row['email'];        
-                  session_start();
-                  $_SESSION['user'] = $name;
-                  $_SESSION['mail'] = $mail;
+              while($row = mysqli_fetch_assoc($result)) {          
+                  session_start(); 
+                  $type=$row['type']; 
+                  $_SESSION['type'] = $type;
                   header("location: adminhome.php");
               }       
           }

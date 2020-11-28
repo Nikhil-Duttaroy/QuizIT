@@ -50,14 +50,41 @@
         <div id="mapid">        
         </div>
         <div class="videocontain">
-          <video width="320" height="240" controls>
+          <video width="320" height="240" id="video" controls>
             <source src="images/videoplayback.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
+          <br>
+          <button onclick="playPause()">Play/Pause</button> 
+          <button onclick="makeBig()">Big</button>
+          <button onclick="makeSmall()">Small</button>
+          <button onclick="makeNormal()">Normal</button>
         </div>
       </div>
       
   </div>     
 </body>
+<script> 
+    var myVideo = document.getElementById("video"); 
+      console.log(myVideo)
+    function playPause() { 
+      if (myVideo.paused) 
+        myVideo.play(); 
+      else 
+        myVideo.pause(); 
+    } 
+
+    function makeBig() { 
+        myVideo.width = 560; 
+    } 
+
+    function makeSmall() { 
+        myVideo.width = 320; 
+    } 
+
+    function makeNormal() { 
+        myVideo.width = 420; 
+    } 
+    </script> 
 <script src="js/contactmap.js"></script>
 </html>

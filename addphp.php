@@ -29,56 +29,53 @@ if(isset($_POST['submit'])) {
 
 <!DOCTYPE html>
 <html>
-	
+	<head>
+		<link rel="stylesheet" href="css/add.css">
+		
+	</head>
 	<body>
     <header>
 	<?php include 'nav.php' ?>
-	</header>
-
-
-		<main>
-		<div class="container">
-				<h2>Add a question...</h2>
-				<form method="post" action="">
-
-					<p>
+	</header>	
+		<div class="modal">
+			<h2 style="text-align: center; padding:15px">Add a PHP Question</h2>
+			<form id="contact-form" method="POST" name="ContactForm">
+					
 						<label>Question</label>
-						<input type="text" name="question" required="" >
-					</p>
-					<p>
+						<br>
+						<input type="text" class="input-field" name="question" required="" >
+					
+					
 						<label>Choice #1</label>
-						<input type="text" name="choice1" required="" >
-					</p>
-					<p>
+						<br>
+						<input type="text" class="input-field" name="choice1" required="" >
+					
 						<label>Choice #2</label>
-						<input type="text" name="choice2" required="" >
-					</p>
-					<p>
+						<br>
+						<input type="text" class="input-field" name="choice2" required="" >
+					
 						<label>Choice #3</label>
-						<input type="text" name="choice3" required="" >
-					</p>
-					<p>
+						<br>
+						<input type="text" class="input-field" name="choice3" required="" >
+					
 						<label>Choice #4</label>
-						<input type="text" name="choice4" required="" >
-					</p>
-					<p>
+						<br>
+						<input type="text" class="input-field" name="choice4" required="" >
+					
 						<label>Correct answer</label>
+						
 						<select name="answer" >
                         <option value="a">Choice #1 </option>
                         <option value="b">Choice #2</option>
                         <option value="c">Choice #3</option>
                         <option value="d">Choice #4</option>
                     </select>
-					</p>
-					<p>
 						
-						<input type="submit" name="submit" value="Submit">
-					</p>
-				</form>
-			</div>
-		</main>
-
+					<input id="btn"  type="submit" name="submit" value="Submit">
+					
 		
+      		</form>
+	</div>
 
 	</body>
 </html>

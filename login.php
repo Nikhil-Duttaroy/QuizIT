@@ -1,4 +1,10 @@
-
+<?php 
+session_start();
+if(isset($_SESSION["mail"])){
+  header('refresh:0, url=home.php');
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
