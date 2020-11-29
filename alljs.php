@@ -5,86 +5,88 @@
 <html>
 	<head>
         <title>Js Quiz</title>
-        <style>
-            body {
-			font-size: 15px;
-			color: #343d44;
-			font-family: "segoe-ui", "open-sans", tahoma, arial;
-			padding: 0;
-			margin: 0;
-		}
-		table {
-			margin: auto;
-			font-family: "Lucida Sans Unicode", "Lucida Grande", "Segoe Ui";
-			font-size: 12px;
-		}
-
-		h1 {
-			margin: 25px auto 0;
-			text-align: center;
-			text-transform: uppercase;
-			font-size: 17px;
-		}
-
-		table td {
-			transition: all .5s;
-		}
-		
-		/* Table */
-		.data-table {
-			border-collapse: collapse;
-			font-size: 14px;
-			min-width: 537px;
-		}
-
-		.data-table th, 
-		.data-table td {
-			border: 1px solid #e1edff;
-			padding: 7px 17px;
-		}
-		.data-table caption {
-			margin: 7px;
-		}
-
-		/* Table Header */
-		.data-table thead th {
-			background-color: #508abb;
-			color: #FFFFFF;
-			border-color: #6ea1cc !important;
-			text-transform: uppercase;
+        <link rel="stylesheet" href="css/index.css">
+		<style>
 			
-		}
+		table { 
+			width: 100%; 
+			border-collapse: collapse; 
+			margin-top: 20px;
+			}
+			/* Zebra striping */
+			tr:nth-of-type(odd) { 
+			background: #1f2840; 
+			color:white
+			/* color: var(--primaryColor); */
+			}
 
-		/* Table Body */
-		.data-table tbody td {
-			color: #353535;
-		}
-		.data-table tbody td:first-child,
-		.data-table tbody td:nth-child(4),
-		.data-table tbody td:last-child {
-			text-align: right;
-		}
+			th { 
+			background: #333; 
+			color: white; 
+			font-weight: bold; 
+			}
 
-		.data-table tbody tr:nth-child(odd) td {
-			background-color: #f4fbff;
-		}
-		.data-table tbody tr:hover td {
-			background-color: #ffffa2;
-			border-color: #ffff0f;
-		}
+			td, th { 
+			padding: 6px; 
+			border: 1px solid #ccc; 
+			text-align: left; 
+			}
 
-		/* Table Footer */
-		.data-table tfoot th {
-			background-color: #e5f5ff;
-			text-align: right;
-		}
-		.data-table tfoot th:first-child {
-			text-align: left;
-		}
-		.data-table tbody td:empty
-		{
-			background-color: #ffcccc;
-		}
+			
+			@media 
+			only screen and (max-width: 760px),
+			(min-device-width: 100px) and (max-device-width: 1024px)  {
+
+				/* Force table to not be like tables anymore */
+				table, thead, tbody, th, td, tr { 
+					display: block; 
+				}
+				
+				/* Hide table headers (but not display: none;, for accessibility) */
+				thead tr { 
+					position: absolute;
+					top: -9999px;
+					left: -9999px;
+				}
+				
+				tr { border: 1px solid #ccc; }
+				
+				td { 
+					/* Behave  like a "row" */
+					border: none;
+					border-bottom: 1px solid #eee; 
+					position: relative;
+					padding-left: 50%; 
+				}
+				
+				td:before { 
+					/* Now like a table header */
+					position: absolute;
+					/* Top/left values mimic padding */
+					top: 6px;
+					left: 6px;
+					width: 45%; 
+					padding-right: 10px; 
+					white-space: nowrap;
+				}
+				
+				/*
+				Label the data
+				*/
+				td:nth-of-type(1):before { content: "Q.NO"; }
+				td:nth-of-type(2):before { content: "Question"; }
+				td:nth-of-type(3):before { content: "Option1"; }
+				td:nth-of-type(4):before { content: "Option2"; }
+				td:nth-of-type(5):before { content: "Option3"; }
+				td:nth-of-type(6):before { content: "Option4"; }
+				td:nth-of-type(7):before { content: "Correct Answer"; }
+				td:nth-of-type(8):before { content: "Edit"; }
+				td:nth-of-type(9):before { content: "Delete"; }
+				/* td:nth-of-type(10):before { content: "Arbitrary Data"; } */
+				td{
+					font-size: 2rem;
+				}
+			}
         </style>
 	</head>
 
@@ -94,9 +96,8 @@
 		</header>
 
 		
-	<h1> All Questions</h1>
 	<table class="data-table">
-		<caption class="title">All Quiz questions</caption>
+		<caption class="title" style="font-size: 2rem; margin:10px">All JS questions</caption>
 		<thead>
 			<tr>
 				<th>Q.NO</th>
@@ -107,7 +108,7 @@
 				<th>Option4</th>
 				<th>Correct Answer </th>
 				<th>Edit</th>
-				<th>Delete</th>
+				<th style="color: red;">Delete</th>
 
 			</tr>
 		</thead>
@@ -134,8 +135,8 @@
                 echo "<td>$option3</td>";
                 echo "<td>$option4</td>";
                 echo "<td>$Answer</td>";
-				echo "<td> <a href='editjs.php?qno=$qno'> Edit </a></td>";
-				echo "<td> <a href='deljs.php?qno=$qno'> Delete </a></td>";
+				echo "<td> <a href='editphp.php?qno=$qno' style='text-decoration:underline;'> Edit </a></td>";
+                echo "<td> <a href='delphp.php?qno=$qno' style='color:red;'> Delete </a></td>";
               
                 echo "</tr>";
              }

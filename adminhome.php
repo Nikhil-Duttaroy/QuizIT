@@ -49,18 +49,51 @@ session_start();
             width: 150px;
             height: 20px;
         }
+        .head1{
+            margin-top: 15px;
+        }
 
         button:hover {
         background-color:  var(--secondaryColor);
+        }
+        @media screen and (max-width: 600px) {
+        .topicContainer {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            justify-items: center;
+            align-content: center;
+            margin-top: 10vh;
+        }
+        .topicNames{
+            width: 50%;
+            height: 30vh;
+            margin-top: 20px;
+            padding: 0px; 
+        }
+        button {
+        width: 100px;
+        height: 5vh;
+        border-radius: 15px;
+    
+        }
+        .topbtn{
+            
+            width: fit-content;
+            padding: 5px;
+            height: 25px;
+        }
+        .head1{
+            margin-top:1em;
+        }
         }
             
 </style>
 </head>
 <body>
 <?php include 'nav.php' ?>
-<h1 style="text-align:center; margin:15px">Admin panel</h1>
+<h1 class="head1"style="text-align:center;">Admin panel</h1>
 <a href="ajax.php" style="position:absolute; top:3em ;"><button class="topbtn">Search Player</button></a>
-<a style="position:absolute; top:3em ;right:1em;" href="logout.php"><button class="topbtn">Logout</button></a>
+<a style="position:absolute; top:3em ;right:1em;" href="logout.php"><button class="topbtn 1">Logout</button></a>
 <div style="display: flex; justify-content:center"><a  href="allplayers.php"><button>All Players</button></a></div>
 <div class="topicContainer">
     <div class="topicNames php">

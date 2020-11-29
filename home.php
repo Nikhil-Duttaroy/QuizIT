@@ -45,7 +45,7 @@
         grid-template-columns: repeat(1, 1fr);
         justify-items: center;
         align-content: center;
-        margin-top: 15px;
+        margin-top: 20vh;
     }
     .topicNames{
         width: 200px;
