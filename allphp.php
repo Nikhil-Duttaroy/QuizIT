@@ -88,6 +88,23 @@
 					font-size: 2rem;
 				}
 			}
+			button {
+			width: 125px;
+			background-color: #4d84e2;
+			border: none;
+			outline: none;
+			height: 30px;
+			border-radius: 49px;
+			color: black;
+			text-transform: uppercase;
+			font-weight: 600;
+			margin: 5px 0;
+			cursor: pointer;
+			transition: 0.5s;
+			}
+			button:hover {
+			background-color:  var(--secondaryColor);
+			}
         </style>
 	</head>
 
@@ -97,7 +114,7 @@
 		</header>
 
 		
-	
+	<button><a href="adminhome.php">Admin Home</a></button>
 	<table class="data-table">
 		<caption class="title" style="font-size: 2rem; margin:10px">All PHP questions</caption>
 		<thead>

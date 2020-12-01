@@ -88,6 +88,23 @@
 					font-size: 2rem;
 				}
 			}
+			button {
+			width: 125px;
+			background-color: #4d84e2;
+			border: none;
+			outline: none;
+			height: 30px;
+			border-radius: 49px;
+			color: black;
+			text-transform: uppercase;
+			font-weight: 600;
+			margin: 5px 0;
+			cursor: pointer;
+			transition: 0.5s;
+			}
+			button:hover {
+			background-color:  var(--secondaryColor);
+			}
         </style>
 	</head>
 
@@ -97,7 +114,7 @@
 		</header>
 
 		
-	
+		<button><a href="adminhome.php">Admin Home</a></button>
 	<table class="data-table">
 		<caption class="title" style="font-size: 2rem; margin:10px">All HTML questions</caption>
 		<thead>
@@ -136,8 +153,8 @@
                 echo "<td>$option3</td>";
                 echo "<td>$option4</td>";
                 echo "<td>$Answer</td>";
-				echo "<td> <a href='editphp.php?qno=$qno' style='text-decoration:underline;'> Edit </a></td>";
-                echo "<td> <a href='delphp.php?qno=$qno' style='color:red;'> Delete </a></td>";
+				echo "<td> <a href='edithtml.php?qno=$qno' style='text-decoration:underline;'> Edit </a></td>";
+                echo "<td> <a href='delhtml.php?qno=$qno' style='color:red;'> Delete </a></td>";
               
                 echo "</tr>";
              }
