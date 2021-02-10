@@ -1,10 +1,10 @@
-<?php
+<?php session_start();
   require ("connect.php");
   $success=null; 
   $error=null;
-  $name=(isset($_POST['name']) ? $_POST['name'] : null );
-  $email=(isset($_POST['email']) ? $_POST['email'] : null );
-  $password=(isset($_POST['password']) ? $_POST['password'] : null );
+  $name=mysqli_real_escape_string($conn,(isset($_POST['name']) ? $_POST['name'] : null ));
+  $email=mysqli_real_escape_string($conn,(isset($_POST['email']) ? $_POST['email'] : null ));
+  $password=mysqli_real_escape_string($conn,(isset($_POST['password']) ? $_POST['password'] : null ));
   if(isset($_POST['submit'])){
       if(!empty($name && $email && $password)){
           $password=md5($password);
@@ -13,10 +13,13 @@
         
           if (mysqli_num_rows($result) > 0) {
               // output data of each row
-              while($row = mysqli_fetch_assoc($result)) {          
-                  session_start(); 
-                  $type=$row['type']; 
-                  $_SESSION['type'] = $type;
+              while($row = mysqli_fetch_assoc($result)) {
+                //   $name=$row['name'];      
+                //   $mail=$row['email'];
+                  $type=$row['type'];
+                //   $_SESSION['user'] = $name;
+                //   $_SESSION['mail'] = $mail;
+                  $_SESSION['type']=$type;
                   header("location: adminhome.php");
               }       
           }

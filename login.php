@@ -1,9 +1,38 @@
-<?php 
-session_start();
-if(isset($_SESSION["mail"])){
-  header('refresh:0, url=home.php');
+<?php session_start();
+if(isset($_SESSION["id"])){
+  header('location:home.php');
   exit();
-}
+    }
+  require ("connect.php");
+  $success=null; 
+  $login_error=null;
+  $email=mysqli_real_escape_string($conn,(isset($_POST['email']) ? $_POST['email'] : null ));
+  $password=mysqli_real_escape_string($conn,(isset($_POST['password']) ? $_POST['password'] : null ));
+  if(isset($_POST['submit'])){
+      if(!empty($email && $password)){
+          $password=md5($password); 
+          $select = "SELECT * FROM user where email='$email' and password='$password'"; 
+          $result = mysqli_query($conn, $select);
+          if (mysqli_num_rows($result) > 0) {
+              // output data of each row
+              while($row = mysqli_fetch_assoc($result)) {
+                  $name=$row['name'];      
+                  $mail=$row['email'];        
+                  $_SESSION['score'] = $row['score'];
+                  $id = $row['id'];
+                  $_SESSION['id'] = $id;
+                  $_SESSION['email'] = $row['email'];
+                  $_SESSION['user'] = $name;
+                  $_SESSION['mail'] = $mail;
+                  header("location: home.php");
+              }       
+          }
+          else $login_error = "Your Login Name or Password is invalid";                          
+      }
+      else  $login_error="Input Values";
+  }
+
+  // mysqli_close($conn);    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,38 +65,6 @@ if(isset($_SESSION["mail"])){
       </nav>
       <div class="forms-container">
         <div class="signin-signup">
-<?php
-  require ("connect.php");
-  $success=null; 
-  $login_error=null;
-  $email=(isset($_POST['email']) ? $_POST['email'] : null );
-  $password=(isset($_POST['password']) ? $_POST['password'] : null );
-  if(isset($_POST['submit'])){
-      if(!empty($email && $password)){
-          $password=md5($password); 
-          $select = "SELECT * FROM user where email='$email' and password='$password'"; 
-          $result = mysqli_query($conn, $select);
-          if (mysqli_num_rows($result) > 0) {
-              // output data of each row
-              while($row = mysqli_fetch_assoc($result)) {
-                  session_start();
-                  $name=$row['name'];      
-                  $mail=$row['email']; 
-                  $id = $row['id'];
-                  $_SESSION['id'] = $id;
-                  $_SESSION['email'] = $row['email'];
-                  $_SESSION['score'] = $row['score'];
-                  $_SESSION['user'] = $name;
-                  $_SESSION['mail'] = $mail;
-                  header("location: home.php");
-              }       
-          }
-          else $login_error = "Your Login Name or Password is invalid";                          
-      }
-      else  $login_error="Input Values";
-  }             // mysqli_close($conn);    
-?>
-
         <!-- Sign In Form -->
           <form action="login.php" class="sign-in-form" method="POST">
             <h2 class="title">Log in</h2>
@@ -95,10 +92,10 @@ if(isset($_SESSION["mail"])){
 require ("connect.php");
 $success=null; 
 $error=null;
-$name=(isset($_POST['username']) ? $_POST['username'] : null );
-$email=(isset($_POST['email']) ? $_POST['email'] : null );
-$password1=(isset($_POST['password1']) ? $_POST['password1'] : null );
-$password2=(isset($_POST['password2']) ? $_POST['password2'] : null );
+$name=mysqli_real_escape_string($conn,(isset($_POST['username']) ? $_POST['username'] : null ));
+$email=mysqli_real_escape_string($conn,(isset($_POST['email']) ? $_POST['email'] : null ));
+$password1=mysqli_real_escape_string($conn,(isset($_POST['password1']) ? $_POST['password1'] : null ));
+$password2=mysqli_real_escape_string($conn,(isset($_POST['password2']) ? $_POST['password2'] : null ));
 if(isset($_POST['Rsubmit'])){
  
     if(!empty($name && $password && $email && $password1)){
