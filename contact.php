@@ -1,3 +1,33 @@
+<?php
+    
+    if(isset($_POST['submit'])){
+
+        $name=(isset($_POST['name']) ? $_POST['name'] : null );
+        $subject=(isset($_POST['subject']) ? $_POST['subject'] : null );
+        $email=(isset($_POST['email']) ? $_POST['email'] : null );
+        $message=(isset($_POST['message']) ? $_POST['message'] : null );
+        
+        if(!empty($name && $email && $message && $subject)){
+
+            $to=$email;
+            $subject="Thank You";
+            $headers="From: nsdr2000@gmail.com";
+            $body="Thank you for your Feedback  $name";
+            mail($to,$subject,$body,$headers);
+            
+            $admin="nsdr2000@gmail.com";
+            $subjectadmin="$name Details";
+            $headersadmin="From : $name ,$email";
+            $bodyadmin="Name : ".$name."\n Email : ".$email."\n Feedback : ".$message;
+            mail($admin,$subjectadmin,$bodyadmin,$headersadmin);     
+            echo "Your Feedback has been sent";        
+        }
+        else echo "Please input all the parameters";
+    
+    }
+    
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +73,7 @@
 
                 <label>Message</label>
                 <textarea required class="input-field" name="message"></textarea>       
-                <input id="submit-btn" type="submit" value="Send" />
+                <input id="submit-btn" type="submit" value="Send" name="submit" />
         </form>
       </div>  
       <div class="mapContain">
